@@ -1,0 +1,17 @@
+Package: RMThreshold
+Type: Package
+Title: Signal-Noise Separation in Random Matrices by using Eigenvalue
+        Spectrum Analysis
+Version: 1.0
+Date: 2016-06-03
+Author: Uwe Menzel 
+Maintainer: Uwe Menzel <uwemenzel@gmail.com>
+Description: An algorithm which can be used to determine an objective threshold for signal-noise separation in large random matrices (correlation matrices, mutual information matrices, network adjacency matrices) is provided. The package makes use of the results of Random Matrix Theory (RMT). The algorithm increments a suppositional threshold monotonically, thereby recording the eigenvalue spacing distribution of the matrix. According to RMT, that distribution undergoes a characteristic change when the threshold properly separates signal from noise. By using the algorithm, the modular structure of a matrix - or of the corresponding network - can be unraveled.  
+License: GPL
+LazyLoad: yes
+Imports: Matrix, png
+NeedsCompilation: no
+Packaged: 2016-06-21 08:46:04 UTC; meuw0001
+Depends: R (>= 2.10)
+Repository: CRAN
+Date/Publication: 2016-06-21 11:00:16

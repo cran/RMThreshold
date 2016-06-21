@@ -1,0 +1,9 @@
+exportPattern("^[[:alpha:]]+")
+importFrom("grDevices", "dev.copy", "dev.new", "dev.off", "pdf", "png")
+importFrom("graphics", "abline", "curve", "hist", "identify", "legend",
+             "lines", "matplot", "mtext", "par", "plot", "plot.new",
+             "points", "rasterImage", "title")
+importFrom("stats", "approx", "density", "ecdf", "ks.test", "lm",
+             "loess", "predict", "quantile", "rnorm", "runif", "sd",
+             "splinefun")
+importFrom("utils", "write.table")
