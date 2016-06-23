@@ -45,7 +45,7 @@ res <- rm.matrix.validation(some.mat)		# not really a proper matrix for this app
 noisy.matrix <- add.Gaussian.noise(some.mat, mean = 0, stddev = 1, symm = TRUE)
 noisy.matrix[1:3, 1:10]
 res <- rm.matrix.validation(noisy.matrix)	# better!
-res <- rm.get.threshold(noisy.matrix)		# 4.2	
+res <- rm.get.threshold(noisy.matrix)		# about 4.3	
 }
 
 }

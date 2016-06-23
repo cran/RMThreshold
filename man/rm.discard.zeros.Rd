@@ -30,7 +30,8 @@ The diagonal of the matrix is not included when counting the zeros in a row/colu
 
 \examples{
 
-load(system.file("data", "random.matrix.RData", package = "RMThreshold"))
+set.seed(777)
+random.matrix <- create.rand.mat(size = 1000, distrib = "norm")$rand.matr
 dim(random.matrix)
 
 ## After identification of a proper threshold:

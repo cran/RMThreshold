@@ -24,7 +24,8 @@
 
 \examples{
 
-load(system.file("data", "random.matrix.RData", package="RMThreshold"))
+set.seed(777)
+random.matrix <- create.rand.mat(size = 1000, distrib = "norm")$rand.matr
 dim(random.matrix)
 
 

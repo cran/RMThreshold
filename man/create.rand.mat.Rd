@@ -34,6 +34,7 @@ A list containing the following components:
 \examples{
   set.seed(777)
   random.matrix <- create.rand.mat(size = 1000, distrib = "norm")$rand.matrix
+  dim(random.matrix)
 }
 
 \keyword{ models }

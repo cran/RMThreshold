@@ -102,13 +102,14 @@ A list containing the following entries:
 \examples{
 
 ## Run with pre-defined random matrix:
-load(system.file("data", "random.matrix.RData", package="RMThreshold"))
+set.seed(777)
+random.matrix <- create.rand.mat(size = 1000, distrib = "norm")$rand.matr
 dim(random.matrix)		# 1000 1000
 
 \dontrun{
 res <- rm.get.threshold(random.matrix)	# threshold might be 3.21
-str(res)				# List of 26
-rm.show.plots(res$comparison.plots)  # watch sequence of plots once more
+str(res)								# List of 26
+rm.show.plots(res$comparison.plots)  	# watch sequence of plots once more
 }
 
 ## Try other parameters:
@@ -116,7 +117,7 @@ rm.show.plots(res$comparison.plots)  # watch sequence of plots once more
 res <- rm.get.threshold(random.matrix, unfold.method = "spline")	
 res <- rm.get.threshold(random.matrix, dist.method = "KLD")			
 res <- rm.get.threshold(random.matrix, discard.outliers = FALSE) # might cause problems
-res <- rm.get.threshold(random.matrix, wait.seconds = 2)	 # slow down
+res <- rm.get.threshold(random.matrix, wait.seconds = 2)	 	 # slow down
 res <- rm.get.threshold(random.matrix, discard.zeros = TRUE)    	
 res <- rm.get.threshold(random.matrix, discard.zeros = TRUE, dist.method = "KLD")	
 }
@@ -138,13 +139,6 @@ dim(cleaned.matrix)	# smaller
   clusters(g)		
 }
 
-## Run with self-created random matrix:
-\dontrun{
-set.seed(777)
-rmat <- create.rand.mat(size = 1000, distrib = "norm")$rand.matrix
-res <- rm.matrix.validation(rmat)
-res <- rm.get.threshold(rmat)
-}
 
 \dontrun{
 
@@ -161,7 +155,7 @@ res <- rm.get.threshold(rmat)
   res <- rm.get.threshold(mat1)	# threshold possibly about 0.46
   # a smaller interval had been ok as well:
   res <- rm.get.threshold(mat1, interval = c(0, 0.8)) 
-  cleaned <- rm.denoise.mat(mat1, 0.46)
+  cleaned <- rm.denoise.mat(mat1, 0.5)
   matr <- cleaned != 0
   g  <- graph.adjacency(matr, mode = "undirected")
   clusters(g)	# 4 clusters reconstructed

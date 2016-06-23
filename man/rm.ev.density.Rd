@@ -33,7 +33,8 @@ The function creates a density plot of the empirical distribution of the eigenva
 
 \examples{
 ## Plot histogram of the spacings of the unfolded eigenvalues of a random matrix:
-load(system.file("data", "random.matrix.RData", package="RMThreshold"))
+set.seed(777)
+random.matrix <- create.rand.mat(size = 1000, distrib = "norm")$rand.matr
 res <- rm.ev.unfold(random.matrix)					  
 rm.ev.density(res$eigenvalues, wigner = TRUE) 
 }

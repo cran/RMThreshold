@@ -26,13 +26,14 @@ A data frame containing the values of the largest \code{nr.list} matrix elements
 
 \examples{
 
-load(system.file("data", "random.matrix.RData", package="RMThreshold"))
-dim(random.matrix)
+set.seed(777)
+random.mat <- create.rand.mat(size = 1000, distrib = "norm")$rand.matr
+dim(random.mat)
 
 ## After identification of a proper threshold:
-cleaned.matrix <- rm.denoise.mat(random.matrix, threshold = 3.2, keep.diag = TRUE)	
+cleaned.matrix <- rm.denoise.mat(random.mat, threshold = 3.2, keep.diag = TRUE)	
 cl2.matrix = rm.discard.zeros(cleaned.matrix)				 
-  
+df = rm.connections(cl2.matrix)  
 }
 
 \keyword{ models }

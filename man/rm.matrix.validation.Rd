@@ -53,8 +53,9 @@ A list containing the following entries:
 
 \examples{
 
-## Run with pre-defined random matrix:
-load(system.file("data", "random.matrix.RData", package="RMThreshold"))
+## Run with self-created  random matrix:
+set.seed(777)
+random.matrix <- create.rand.mat(size = 1000, distrib = "norm")$rand.matr
 dim(random.matrix)		# 1000 1000   should be big enough
 
 \dontrun{
@@ -62,15 +63,6 @@ res <- rm.matrix.validation(random.matrix)
 res <- rm.matrix.validation(random.matrix, discard.outliers = FALSE)	
 res <- rm.matrix.validation(random.matrix, unfold.method = "spline")
 res <- rm.matrix.validation(random.matrix, unfold.method = "spline", discard.outliers = FALSE)
-}
-
-## Run with self-created random matrix:
-\dontrun{
-rmat <- create.rand.mat(size = 1000, distrib = "norm", mean = 0, stddev = 1)$rand.matrix	
-res <- rm.matrix.validation(rmat)
-res <- rm.matrix.validation(rmat, discard.outliers = FALSE)
-res <- rm.matrix.validation(rmat, unfold.method = "spline")
-res <- rm.matrix.validation(rmat, unfold.method = "spline", discard.outliers = FALSE)
 }
 
 \dontrun{
